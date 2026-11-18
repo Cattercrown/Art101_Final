@@ -1,0 +1,69 @@
+
+body {
+   background-image: url("potato-field-of-russia-photo.jpg");
+    background-position: center;
+    background-size: cover;
+    padding: 50px;
+    margin: 24px;
+    font-family: Arial, sans-serif;
+    font-weight: bold;
+    color: #333;
+   
+}
+
+p { line-height: 1.5; }
+
+#items { display: flex; gap: 16px; margin: 24px 0; }
+
+.item {
+    width: 64px;
+    height: 64px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #777;
+    background: #e7e7e3;
+    font-size: 22px;
+    cursor: grab;
+    user-select: none;
+    font-weight: bold;
+}
+
+.item:active { cursor: grabbing; }
+
+img[src = "potato.png"]
+{
+display: block;
+margin-left: auto;
+margin-right: auto;
+width: 250px;
+height:auto
+}
+
+img[src = "watering-can.png"]
+{
+    
+    width: 100px;
+    height: auto;
+}
+
+/* Highlight on pointer hover or when JavaScript adds the drag-over class. */
+#target:hover,
+#target.drag-over {
+    width: 250px;
+    height: auto;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#reult { min-height: 48px; }
+
+
+img[src = "jooody.jpeg"]
+{
+    
+    width: 125px;
+    height: auto;
+}
+

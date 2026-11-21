@@ -57,7 +57,10 @@ img[src = "watering-can.png"]
     margin-right: auto;
 }
 
-#reult { min-height: 48px; }
+#reult { min-height: 48px; 
+background-color: blueviolet;
+opacity: 40;
+}
 
 
 img[src = "jooody.jpeg"]

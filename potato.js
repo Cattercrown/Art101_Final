@@ -51,18 +51,22 @@ $("#target").on("click", function () {
         return;
     }
 
-    if (bugsLeft > 0) {
+    if (bugsLeft > 0 && taskNum == gloves_num) {
         $(".bug").last().remove();
         bugsLeft = bugsLeft - 1;
         $("#result").text("Beetles left on potato: " + bugsLeft);
     }
 
+
     if (bugsLeft == 0) {
         glovesActive = false;
         $("#item-Gloves").removeClass("active");
         $("#result").text("All beetles are gone! Great job!");
+        taskNum = taskNum + 1;
+        gloves_num = gloves_num + 3;
     }
 });
+
 dayText = dayCount[dayCycle]
 $("#day-button").html(dayText);
 
@@ -135,7 +139,6 @@ $("#target").on("drop", function (event) {
 
         // reset to default values
         taskNum = 0;
-        console.log("tasknum = 0 now")
         watering_can_num = 0;
         rake_num = 1;
         gloves_num = 2;

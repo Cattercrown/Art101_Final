@@ -4,9 +4,19 @@
 // Shared by the handlers; an empty string means no item is being dragged.
 let draggedId = "";
 // Change this ID to choose which item matches.
+let taskNum=0;
+let dayCount=0;
+
+let dayCycle=["Day 1", "Night 1", "Day 2", "Night 2", "Day 3", "Night 3"];
+
+let dayText = "";
+
 let expectedItemId = "item-WateringCan";
 
-var myMusic;
+
+dayText = dayCount[dayCycle]
+$("#day-button").html( dayText ); 
+
 
 // Run this function when dragging starts on an .item element.
 $(".item").on("dragstart", function () {
@@ -45,6 +55,7 @@ $("#target").on("drop", function (event) {
         // .text(...) replaces the text inside #result.
         $("#result").text("You've watered the Potato!.");
          $(".modal-footer").text("Task: Complete!");
+         taskNum = taskNum + 1
     }
     else {
         $("#result").text("This item does not match. Try another.");

@@ -140,3 +140,7 @@ img[src = "jooody.jpeg"]
   from {top: -300px; opacity: 0}
   to {top: 0; opacity: 1}
 }
+
+#day-button{
+background-color: #04AA6D;
+}

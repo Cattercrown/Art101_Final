@@ -11,7 +11,15 @@ let dayCycle = ["Day 1", "Night 1", "Day 2", "Night 2", "Day 3", "Night 3"];
 
 let dayText = "";
 
-let expectedItemId = "item-WateringCan";
+
+let expectedItemId1 = "item-WateringCan";
+let watering_can_num = 0;
+
+let expectedItemId2 = "item-Rake";
+let rake_num = 1;
+
+let expectedItemId3 = "item-Gloves";
+let gloves_num = 2;
 
 
 dayText = dayCount[dayCycle]
@@ -51,15 +59,34 @@ $("#target").on("drop", function (event) {
     }
 
     // Compare the saved ID with the expected item.
-    if (draggedId == expectedItemId) {
+    if (draggedId == expectedItemId1 && taskNum == watering_can_num) {
         // .text(...) replaces the text inside #result.
         $("#result").text("You've watered the Potato!");
         $(".modal-footer").text("Task: Complete!");
-        taskNum = taskNum + 1
+        taskNum = taskNum + 1;
+        watering_can_num = watering_can_num + 3;
     }
+    
+    else if (draggedId == expectedItemId2 && taskNum == rake_num) {
+        // .text(...) replaces the text inside #result.
+        $("#result").text("You've tilled the soil!");
+        $(".modal-footer").text("Task: Complete!");
+        taskNum = taskNum + 1;
+        rake_num = rake_num + 3;
+    }
+
+    else if (draggedId == expectedItemId3 && taskNum == gloves_num) {
+        // .text(...) replaces the text inside #result.
+        $("#result").text("You've grabbed the beetles!");
+        $(".modal-footer").text("Task: Complete!");
+        taskNum = taskNum + 1;
+        gloves_num = gloves_num + 3;
+    }
+
     else {
         $("#result").text("This item does not match. Try another.");
     }
+ 
 });
 
 // Clear the saved ID and highlight after a drop or canceled drag.

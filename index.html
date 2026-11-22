@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,39 +9,52 @@
     <script src="jquery-3.7.1.min.js"></script>
     <script src="potato.js" defer></script>
 </head>
+
 <body>
-     <button id="day-button">Day 1</button>
-    <p>Drag either item onto the target. It is looking for the watering can.</p>
-   
+    <button id="day-button">Day 1</button>
+    <p>Follow Farmer Bunny's instructions to care for the potato.</p>
+
     <div id="items">
         <!-- draggable lets the browser start dragging this element. -->
         <div id="item-WateringCan" class="item" draggable="true">
             <img src="watering-can.png">
         </div>
-        <div id="item-Rake" class="item" draggable="true">Rake</div>
-        <div id="item-Gloves" class="item" draggable="true">Gloves</div>
+
+        <div id="item-Rake" class="item" draggable="true">
+            <img src="rake.png">
+        </div>
+
+        <div id="item-Gloves" class="item" draggable="true">
+            <img src="gloves_placeholder.jpg">
+        </div>
     </div>
+
     <div id="target">
         <img src="potato.png">
     </div>
+
     <!-- Modal content -->
-<div class="modal-content">
-  <div class="modal-header">
-    <span class="close">&times;</span>
-    <h2>Farmer Bunny</h2>
-  </div>
-  <div class="modal-body">
-     <p id="result" aria-live="polite">Hello!! I'm Farmer Bunny! For your first task can you water the potato?</p>
-  </div>
-  <div class="modal-footer">
-    <h3>Task 1: Water Potato</h3>
-  </div>
-</div>
+    <div class="modal-content">
+        <div class="modal-header">
+            <span class="close">&times;</span>
+            <h2>Farmer Bunny</h2>
+        </div>
+
+        <div class="modal-body">
+            <p id="result" aria-live="polite">Hello!! I'm Farmer Bunny! For your first task can you water the potato?
+            </p>
+        </div>
+
+        <div class="modal-footer">
+            <h3>Task 1: Water Potato</h3>
+        </div>
+    </div>
+
     <div id="farmer">
         <!-- draggable lets the browser start dragging this element. -->
         <div id="farm-Bunny" class="bunny" draggable="false">
             <img src="jooody.jpeg">
-    
-</body>
-</html>
 
+</body>
+
+</html>

@@ -86,6 +86,22 @@ $("#target").on("drop", function (event) {
     else {
         $("#result").text("This item does not match. Try another.");
     }
+
+    // if all tasks done
+    if (taskNum == 3) {
+        // continue to next day
+        dayCount = dayCount + 1;
+        
+        // reset to default values
+        taskNum = 0;
+        console.log("tasknum = 0 now")
+        watering_can_num = 0;
+        rake_num = 1;
+        gloves_num = 2;
+
+
+
+    }
  
 });
 
@@ -94,6 +110,7 @@ $(".item").on("dragend", function () {
     draggedId = "";
     $("#target").removeClass("drag-over");
 });
+
 // Get the modal
 var modal = document.getElementById("myModal");
 

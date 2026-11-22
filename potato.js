@@ -21,7 +21,48 @@ let rake_num = 1;
 let expectedItemId3 = "item-Gloves";
 let gloves_num = 2;
 
+let bugsLeft = 5;
+let glovesActive = false;
 
+// beetle art
+$("#target").append('<img src="beetle_placeholder.png" class="bug" style="top: 30%; left: 30%;">');
+$("#target").append('<img src="beetle_placeholder.png" class="bug" style="top: 50%; left: 60%;">');
+$("#target").append('<img src="beetle_placeholder.png" class="bug" style="top: 25%; left: 55%;">');
+$("#target").append('<img src="beetle_placeholder.png" class="bug" style="top: 65%; left: 35%;">');
+$("#target").append('<img src="beetle_placeholder.png" class="bug" style="top: 45%; left: 45%;">');
+
+// toggle gloves
+$("#item-Gloves").on("click", function () {
+    glovesActive = !glovesActive; // Switches between true and false
+
+    if (glovesActive) {
+        $(this).addClass("active");
+        $("#result").text("You put the gloves on your paws! Click the potato to pick up them dang beetles!");
+    } else {
+        $(this).removeClass("active");
+        $("#result").text("You have put the gloves put away. Click the gloves to put them on again.");
+    }
+});
+
+// Click the potato to remove 1 beetle
+$("#target").on("click", function () {
+    if (!glovesActive) {
+        $("#result").text("Click the gloves to make them active first!");
+        return;
+    }
+
+    if (bugsLeft > 0) {
+        $(".bug").last().remove();
+        bugsLeft = bugsLeft - 1;
+        $("#result").text("Beetles left on potato: " + bugsLeft);
+    }
+
+    if (bugsLeft == 0) {
+        glovesActive = false;
+        $("#item-Gloves").removeClass("active");
+        $("#result").text("All beetles are gone! Great job!");
+    }
+});
 dayText = dayCount[dayCycle]
 $("#day-button").html(dayText);
 
@@ -66,7 +107,7 @@ $("#target").on("drop", function (event) {
         taskNum = taskNum + 1;
         watering_can_num = watering_can_num + 3;
     }
-    
+
     else if (draggedId == expectedItemId2 && taskNum == rake_num) {
         // .text(...) replaces the text inside #result.
         $("#result").text("You've tilled the soil!");
@@ -91,7 +132,7 @@ $("#target").on("drop", function (event) {
     if (taskNum == 3) {
         // continue to next day
         dayCount = dayCount + 1;
-        
+
         // reset to default values
         taskNum = 0;
         console.log("tasknum = 0 now")
@@ -102,7 +143,7 @@ $("#target").on("drop", function (event) {
 
 
     }
- 
+
 });
 
 // Clear the saved ID and highlight after a drop or canceled drag.

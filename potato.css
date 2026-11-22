@@ -181,3 +181,39 @@ img[src="jooody.jpeg"] {
 #day-button {
   background-color: #04AA6D;
 }
+
+#target {
+  position: relative;
+  width: 250px;
+  margin: 0 auto;
+  cursor: pointer;
+}
+
+#target:active {
+  transform: scale(0.95);
+}
+
+
+.bug {
+  position: absolute;
+  width: 45px;          
+  height: auto;
+  user-select: none;
+  pointer-events: none;
+}
+
+#item-Gloves {
+  cursor: pointer;
+}
+
+#item-Gloves:active {
+  cursor: pointer;
+  transform: scale(0.95);
+}
+
+#item-Gloves.active {
+  border: 3px solid #5cb85c;
+  background-color: #d4edda;
+  box-shadow: 0 0 12px #5cb85c;
+  transform: scale(1.08);
+}
